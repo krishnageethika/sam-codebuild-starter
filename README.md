@@ -1,6 +1,5 @@
 
 # sam-codebuild-starter
----
 
 A starter template for an AWS SAM project, integrated with CodeBuild for continuous integration.
 

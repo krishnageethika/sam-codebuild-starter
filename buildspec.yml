@@ -1,0 +1,25 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - echo Build enviromment `uname -a` `aws --version 2>&1` node/`node --version` npm/`npm --version`
+      - npm install
+      - pip install --upgrade awscli
+  pre_build:
+    commands:
+      - npm test
+  build:
+    commands:
+      - npm run build
+  post_build:
+    commands:
+      - aws cloudformation package
+        --template dist/package/template.yml
+        --s3-bucket $S3_BUCKET
+        --output-template template-export.yml
+
+artifacts:
+  type: zip
+  files:
+    - template-export.yml

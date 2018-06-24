@@ -1,0 +1,36 @@
+{
+  "name": "sam-codebuild-starter",
+  "description": "Starter for AWS SAM and AWS CodeBuild",
+  "version": "0.0.1",
+  "repository": "schibsted/eslint-config-schibsted",
+  "author": {
+    "name": "Pierre Matri",
+    "email": "pierre@matri.me"
+  },
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^3.6.0",
+    "copy-webpack-plugin": "^4.5.1",
+    "eslint": "^5.0.0",
+    "mocha": "5.0.0",
+    "unit.js": "2.0.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "yaml-cfn": "^0.2.0",
+    "zip-webpack-plugin": "^3.0.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "clean": "if [ -d \"dist\" ]; then rm -rf dist/*; fi",
+    "start:sam": "npm run build && concurrently \"webpack --watch\" \"cd dist/package && sam local start-api\"",
+    "start": "npm run start:sam",
+    "lint": "eslint src *.js",
+    "test": "mocha --recursive tests"
+  }
+}

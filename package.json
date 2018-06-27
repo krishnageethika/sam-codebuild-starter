@@ -2,7 +2,7 @@
   "name": "sam-codebuild-starter",
   "description": "Starter for AWS SAM and AWS CodeBuild",
   "version": "0.0.1",
-  "repository": "schibsted/eslint-config-schibsted",
+  "repository": "https://github.com/pierreis/sam-codebuild-starter",
   "author": {
     "name": "Pierre Matri",
     "email": "pierre@matri.me"
@@ -31,6 +31,6 @@
     "start:sam": "npm run build && concurrently \"webpack --watch\" \"cd dist/package && sam local start-api\"",
     "start": "npm run start:sam",
     "lint": "eslint src *.js",
-    "test": "mocha --recursive tests"
+    "test": "mocha --recursive ./**/*.test.js"
   }
 }

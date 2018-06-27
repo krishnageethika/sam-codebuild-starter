@@ -57,6 +57,7 @@ module.exports = function () {
     return {
       context: path.resolve(__dirname),
       mode: 'production',
+      devtool: 'source-map',
       entry: file,
       output: {
         path: path.join(__dirname, 'dist', 'webpack'),

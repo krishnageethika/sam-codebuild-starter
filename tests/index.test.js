@@ -1,7 +1,7 @@
 'use strict';
 
-var test = require('unit.js');
-var index = require('../src/main/index.js');
+const test = require('unit.js');
+const index = require('../src/main/index.js');
 
 describe('Tests index', function () {
   it('verifies successful response', function (done) {

@@ -19,7 +19,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: src/main/index.get
-      Runtime: nodejs8
+      Runtime: nodejs8.x
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]

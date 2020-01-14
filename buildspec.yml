@@ -26,7 +26,7 @@ phases:
 #         --output-template template-export.yml
 
 artifacts:
-  type: zip
+  type: ""
   files:
     -template.yml
     - template-export.yml

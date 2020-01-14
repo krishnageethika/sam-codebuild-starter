@@ -27,6 +27,7 @@ phases:
 
 artifacts:
   type: ""
+  path: /
   files:
     -template.yml
     - template-export.yml

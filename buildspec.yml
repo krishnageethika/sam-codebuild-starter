@@ -16,7 +16,8 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws cloudformation package --template-file template.yml --s3-bucket nodegeethika --output-template-file template-export.yml
+        - aws cloudformation package --template dist/package/template.yml --s3-bucket nodegeethika --output-template template-export.yml
+#       - aws cloudformation package --template-file template.yml --s3-bucket nodegeethika --output-template-file template-export.yml
 
 #       - aws cloudformation package
 #         --template dist/package/template.yml
